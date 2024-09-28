@@ -18,7 +18,7 @@ class Habit(models.Model):
     )
     place_of_execution = models.CharField(
         max_length=255,
-        verbose_name="Место где нужно выполняется привычка",
+        verbose_name="Место где нужно выполнять привычку",
         **NULLABLE
     )
     time_execution = models.TimeField(
