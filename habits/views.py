@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 
 from habits.models import Habit
-from habits.serializers import HabitsSerializer
+from habits.serializers import HabitSerializer
 
 
 class HabitsViewSet(viewsets.ModelViewSet):
@@ -10,7 +9,7 @@ class HabitsViewSet(viewsets.ModelViewSet):
     Представление для модели Habit
     """
 
-    serializer_class = HabitsSerializer
+    serializer_class = HabitSerializer
     queryset = Habit.objects.all()
 
     def perform_create(self, serializer):

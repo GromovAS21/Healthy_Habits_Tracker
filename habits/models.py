@@ -43,7 +43,6 @@ class Habit(models.Model):
         verbose_name="Связанная приятная привычка",
         **NULLABLE,
         related_name="related_habits"
-
     )
     reward = models.CharField(
         verbose_name="Вознаграждение за привычку",
@@ -63,7 +62,8 @@ class Habit(models.Model):
         User,
         on_delete=models.CASCADE,
         verbose_name="Создатель привычки",
-        related_name="useful_habits",
+        related_name="users_habits",
+        **NULLABLE
     )
 
     class Meta:
