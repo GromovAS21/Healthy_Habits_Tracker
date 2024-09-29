@@ -1,6 +1,7 @@
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -54,6 +55,9 @@ class UserHabitViewSet(APIView):
     Представление для получения списка всех привычек пользователя
     """
 
+    @swagger_auto_schema(
+        responses={200: HabitSerializer()}
+    )
     def get(self, request):
         habits = Habit.objects.filter(owner=request.user)
         paginator = ViewUserHabitPagination()
