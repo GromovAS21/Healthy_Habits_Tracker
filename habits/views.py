@@ -1,9 +1,11 @@
-from datetime import timedelta
 
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from habits.models import Habit
+from habits.paginations import ViewUserHabitPagination
 from habits.serializers import HabitSerializer
 from users.permissions import IsOwner
 
@@ -28,5 +30,18 @@ class HabitsViewSet(viewsets.ModelViewSet):
         return super().get_permissions()
 
 
+class UserHabitViewSet(APIView):
+    """
+    Представление для получения списка всех привычек пользователя
+    """
+
+    # pagination_class = ViewUserHabitPagination
+
+    def get(self, request):
+        habits = Habit.objects.filter(owner=request.user)
+        paginator = ViewUserHabitPagination()
+        result = paginator.paginate_queryset(habits, request)
+        serializer = HabitSerializer(result, many=True)
+        return Response(serializer.data)
 
 
