@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from rest_framework import viewsets
 
 from habits.models import Habit
@@ -14,7 +16,7 @@ class HabitsViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         """
-        Добавление владельца к хабиту при создании
+        Добавление владельца к Habit при создании
         """
         serializer.save(owner=self.request.user)
 
