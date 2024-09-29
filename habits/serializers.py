@@ -13,7 +13,9 @@ class HabitSerializer(serializers.ModelSerializer):
         model = Habit
         fields = "__all__"
         validators = [
-            FieldFillingValidator("reward", "related_habit"),
+            FieldFillingValidator("reward", "related_habit", "sign_of_a_pleasant_habit"),
             ExecutionTimeValidator("time_to_complete"),
             RelatedHabitValidator("related_habit")
         ]
+
+
