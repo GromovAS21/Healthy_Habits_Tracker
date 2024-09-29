@@ -1,0 +1,114 @@
+[
+  {
+    "model": "habits.habit",
+    "pk": 1,
+    "fields": {
+      "habit": "admin полезная привычка",
+      "place_of_execution": "Дома",
+      "time_execution": null,
+      "periodicity": 3,
+      "time_to_complete": "00:01:50",
+      "sign_of_a_pleasant_habit": false,
+      "related_habit": null,
+      "reward": "admin reward",
+      "published": "Не опубликован",
+      "owner": 1
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 33,
+    "fields": {
+      "habit": "test полезная привычка",
+      "place_of_execution": "test место",
+      "time_execution": "15:00:00",
+      "periodicity": 1,
+      "time_to_complete": "00:01:40",
+      "sign_of_a_pleasant_habit": false,
+      "related_habit": null,
+      "reward": "Test награда",
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 34,
+    "fields": {
+      "habit": "test приятная привычка",
+      "place_of_execution": null,
+      "time_execution": null,
+      "periodicity": 1,
+      "time_to_complete": "00:02:00",
+      "sign_of_a_pleasant_habit": true,
+      "related_habit": null,
+      "reward": null,
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 35,
+    "fields": {
+      "habit": "test приятная привычка",
+      "place_of_execution": null,
+      "time_execution": null,
+      "periodicity": 1,
+      "time_to_complete": "00:02:00",
+      "sign_of_a_pleasant_habit": true,
+      "related_habit": null,
+      "reward": null,
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 36,
+    "fields": {
+      "habit": "test приятная привычка",
+      "place_of_execution": null,
+      "time_execution": null,
+      "periodicity": 1,
+      "time_to_complete": "00:02:00",
+      "sign_of_a_pleasant_habit": true,
+      "related_habit": null,
+      "reward": null,
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 37,
+    "fields": {
+      "habit": "test приятная привычка",
+      "place_of_execution": null,
+      "time_execution": null,
+      "periodicity": 1,
+      "time_to_complete": "00:02:00",
+      "sign_of_a_pleasant_habit": true,
+      "related_habit": null,
+      "reward": null,
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  },
+  {
+    "model": "habits.habit",
+    "pk": 38,
+    "fields": {
+      "habit": "test приятная привычка",
+      "place_of_execution": null,
+      "time_execution": null,
+      "periodicity": 1,
+      "time_to_complete": "00:02:00",
+      "sign_of_a_pleasant_habit": true,
+      "related_habit": null,
+      "reward": null,
+      "published": "Не опубликован",
+      "owner": 4
+    }
+  }
+]

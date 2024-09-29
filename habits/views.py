@@ -54,7 +54,6 @@ class UserHabitViewSet(APIView):
     Представление для получения списка всех привычек пользователя
     """
 
-    # pagination_class = ViewUserHabitPagination
     def get(self, request):
         habits = Habit.objects.filter(owner=request.user)
         paginator = ViewUserHabitPagination()
