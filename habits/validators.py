@@ -33,6 +33,22 @@ class ExecutionTimeValidator:
                 raise ValidationError("Продолжительность выполнения привычки не может быть более 120 секунд")
 
 
+class RelatedHabitValidator:
+    """
+    Валидатор для проверки связанной привычки на принадлежность к приятной привычки
+    """
+
+    def __init__(self, related_habit):
+        self.related_habit = related_habit
+
+    def __call__(self, value):
+        habit = value.get(self.related_habit)
+        if habit:
+            if not habit.sign_of_a_pleasant_habit:
+                raise ValidationError("Связанная привычка должна быть приятной")
+
+
+
 
 
 
