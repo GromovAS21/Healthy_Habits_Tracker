@@ -40,9 +40,12 @@ class HabitsViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         """
-        Добавление владельца к Habit при создании
+        Добавление владельца к Habit при создании и определенье поля send_indicator
         """
-        serializer.save(owner=self.request.user)
+        habit = serializer.save(owner=self.request.user)
+        habit.send_indicator = habit.periodicity
+        habit.save(update_fields=["send_indicator"])
+
 
     def get_permissions(self):
         if self.action in ["retrieve", "update", "partial_update", "destroy"]:
@@ -63,6 +66,6 @@ class UserHabitViewSet(APIView):
         paginator = ViewUserHabitPagination()
         result = paginator.paginate_queryset(habits, request)
         serializer = HabitSerializer(result, many=True)
-        return Response(serializer.data)
+        return paginator.get_paginated_response(serializer.data)
 
 

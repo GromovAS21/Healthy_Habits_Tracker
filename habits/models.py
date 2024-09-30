@@ -65,6 +65,11 @@ class Habit(models.Model):
         related_name="users_habits",
         **NULLABLE
     )
+    send_indicator = models.PositiveSmallIntegerField(
+        editable=False,
+        verbose_name="Индикатор отправки",
+        **NULLABLE
+    )
 
     class Meta:
         verbose_name = "Привычка"

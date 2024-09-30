@@ -15,7 +15,7 @@ class HabitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Habit
-        fields = "__all__"
+        exclude = ("send_indicator",)
         validators = [
             FieldFillingValidator("reward", "related_habit", "sign_of_a_pleasant_habit"),
             RelatedHabitValidator("related_habit")
