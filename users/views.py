@@ -40,3 +40,8 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.action == "create":
             self.permission_classes = (AllowAny,)
         return super().get_permissions()
+
+    def perform_create(self, serializer):
+        user = serializer.save(is_active=True)
+        user.set_password(user.password)
+        user.save(update_fields=["password",])
