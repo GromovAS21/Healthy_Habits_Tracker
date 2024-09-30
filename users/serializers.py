@@ -12,4 +12,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ("id", "email", "tg_chat_id", "is_staff", "is_active", "is_superuser", "habits")
+        fields = "__all__"
