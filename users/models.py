@@ -8,6 +8,7 @@ class User(AbstractUser):
     """
     Модель пользователя
     """
+
     username = None
 
     email = models.EmailField(
@@ -39,6 +40,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-
-
-

@@ -19,14 +19,19 @@ class FieldFillingValidator:
         sign_of_a_pleasant_habit_field = value.get(self.sign_of_a_pleasant_habit)
 
         if reward_field and related_habit_field:
-            raise ValidationError("Может быть заполнено поле reward или поле related_habit")
+            raise ValidationError(
+                "Может быть заполнено поле reward или поле related_habit"
+            )
         if sign_of_a_pleasant_habit_field:
             if reward_field or related_habit_field:
-                raise ValidationError("У приятной привычки не может быть связанной привычки или вознаграждения")
+                raise ValidationError(
+                    "У приятной привычки не может быть связанной привычки или вознаграждения"
+                )
         else:
             if not reward_field and not related_habit_field:
                 raise ValidationError(
-                    "Поле reward или поле related_habit обязательно для заполнения у полезной привычки")
+                    "Поле reward или поле related_habit обязательно для заполнения у полезной привычки"
+                )
 
 
 class RelatedHabitValidator:
@@ -51,7 +56,9 @@ def execution_time_validator(value):
 
     if value:
         if value > timedelta(seconds=120):
-            raise ValidationError("Продолжительность выполнения привычки не может быть более 120 секунд")
+            raise ValidationError(
+                "Продолжительность выполнения привычки не может быть более 120 секунд"
+            )
 
 
 def frequency_of_habit_validator(value):
@@ -60,4 +67,6 @@ def frequency_of_habit_validator(value):
     """
 
     if value > 7:
-        raise ValidationError("Периодичность выполнения привычки должна быть не реже 7 дней")
+        raise ValidationError(
+            "Периодичность выполнения привычки должна быть не реже 7 дней"
+        )

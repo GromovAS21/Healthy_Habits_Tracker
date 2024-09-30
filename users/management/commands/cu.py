@@ -7,11 +7,9 @@ class Command(BaseCommand):
     """
     Команда для создания пользователей
     """
+
     def handle(self, *args, **options):
-        users_list = [
-            {"email": "test@test.ru"},
-            {"email": "test1@test.ru"}
-        ]
+        users_list = [{"email": "test@test.ru"}, {"email": "test1@test.ru"}]
 
         users_for_create = []
 

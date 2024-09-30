@@ -17,8 +17,7 @@ class Habit(models.Model):
         verbose_name="Привычка",
     )
     place_of_execution = models.CharField(
-        max_length=255,
-        verbose_name="Место где нужно выполнять привычку",
+        max_length=255, verbose_name="Место где нужно выполнять привычку",
         **NULLABLE
     )
     time_execution = models.TimeField(
@@ -31,7 +30,7 @@ class Habit(models.Model):
     )
     time_to_complete = models.DurationField(
         default=timedelta(seconds=120),
-        verbose_name="Продолжительность выполнения привычки по времени"
+        verbose_name="Продолжительность выполнения привычки по времени",
     )
     sign_of_a_pleasant_habit = models.BooleanField(
         verbose_name="Показатель приятной привычки",
@@ -48,6 +47,7 @@ class Habit(models.Model):
         verbose_name="Вознаграждение за привычку",
         **NULLABLE
     )
+
     STATUS_PUBLISHED = [
         ("Опубликован", "Опубликован"),
         ("Не опубликован", "Не опубликован"),
@@ -56,7 +56,7 @@ class Habit(models.Model):
         max_length=50,
         choices=STATUS_PUBLISHED,
         default="Не опубликован",
-        verbose_name="Статус опубликования привычки"
+        verbose_name="Статус опубликования привычки",
     )
     owner = models.ForeignKey(
         User,
@@ -78,4 +78,3 @@ class Habit(models.Model):
 
     def __str__(self):
         return self.habit
-

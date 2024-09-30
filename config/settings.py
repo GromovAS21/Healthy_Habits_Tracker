@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,6 @@ INSTALLED_APPS = [
     "corsheaders",
     "drf_yasg",
     "django_celery_beat",
-
     "users",
     "habits",
 ]
@@ -88,9 +88,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 5,
 }
 
 SIMPLE_JWT = {
@@ -130,7 +132,7 @@ CELERY_RESULT_BACKEND = os.getenv("REDIS_RESULT_BACKEND")
 CELERY_BEAT_SCHEDULE = {
     "send_message_to_user": {
         "task": "habits.tasks.send_message_to_user",
-        "schedule": timedelta(days=1)
+        "schedule": timedelta(days=1),
     }
 }
 
