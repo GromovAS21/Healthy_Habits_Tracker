@@ -12,7 +12,7 @@ class HabitTest(APITestCase):
     """
 
     def setUp(self):
-        self.user = User.objects.create(email='test@test.ru')
+        self.user = User.objects.create(email="test@test.ru")
         self.habit = Habit.objects.create(
             habit="test полезная привычка",
             place_of_execution="test место",
@@ -31,22 +31,24 @@ class HabitTest(APITestCase):
         response = self.client.get(url)
 
         result = {
-            'count': 1,
-            'next': None,
-            'previous': None,
-            'results': [
-                {'id': self.habit.id,
-                 'time_to_complete': '00:02:00',
-                 'periodicity': 1,
-                 'habit': 'test полезная привычка',
-                 'place_of_execution': 'test место',
-                 'time_execution': '12:00:00',
-                 'sign_of_a_pleasant_habit': False,
-                 'reward': 'test вознаграждение',
-                 'published': 'Не опубликован',
-                 'related_habit': None,
-                 'owner': self.user.pk
-                 }]
+            "count": 1,
+            "next": None,
+            "previous": None,
+            "results": [
+                {
+                    "id": self.habit.id,
+                    "time_to_complete": "00:02:00",
+                    "periodicity": 1,
+                    "habit": "test полезная привычка",
+                    "place_of_execution": "test место",
+                    "time_execution": "12:00:00",
+                    "sign_of_a_pleasant_habit": False,
+                    "reward": "test вознаграждение",
+                    "published": "Не опубликован",
+                    "related_habit": None,
+                    "owner": self.user.pk,
+                }
+            ],
         }
 
         self.assertEqual(
@@ -64,7 +66,7 @@ class HabitTest(APITestCase):
         """
         url = reverse("habits:habits-list")
         data = {
-            'habit': 'test1 полезная привычка',
+            "habit": "test1 полезная привычка",
             "reward": "test1 вознаграждение",
         }
         response = self.client.post(url, data)
@@ -75,8 +77,8 @@ class HabitTest(APITestCase):
         )
         self.assertEqual(
             Habit.objects.count(),
-            2
-        )
+            2)
+
 
     def test_retrieve_habit(self):
         """
@@ -104,10 +106,7 @@ class HabitTest(APITestCase):
 
         url = reverse("habits:habits-detail", args=(self.habit.pk,))
 
-        data = {
-            "habit": "test1 полезная привычка",
-            "reward": "test вознаграждение"
-        }
+        data = {"habit": "test1 полезная привычка", "reward": "test вознаграждение"}
 
         response = self.client.patch(url, data)
 
@@ -132,10 +131,7 @@ class HabitTest(APITestCase):
             response.status_code,
             status.HTTP_204_NO_CONTENT
         )
-        self.assertEqual(
-            Habit.objects.count(),
-            0
-        )
+        self.assertEqual(Habit.objects.count(), 0)
 
     def test_user_habits_list(self):
         """
@@ -147,23 +143,24 @@ class HabitTest(APITestCase):
         response = self.client.get(url)
 
         result = {
-            'count': 1,
-            'next': None,
-            'previous': None,
-            'results': [
+            "count": 1,
+            "next": None,
+            "previous": None,
+            "results": [
                 {
-                    'id': 7,
-                    'time_to_complete': '00:02:00',
-                    'periodicity': 1,
-                    'habit': 'test полезная привычка',
-                    'place_of_execution': 'test место',
-                    'time_execution': '12:00:00',
-                    'sign_of_a_pleasant_habit': False,
-                    'reward': 'test вознаграждение',
-                    'published': 'Не опубликован',
-                    'related_habit': None,
-                    'owner': 6
-                }]
+                    "id": 7,
+                    "time_to_complete": "00:02:00",
+                    "periodicity": 1,
+                    "habit": "test полезная привычка",
+                    "place_of_execution": "test место",
+                    "time_execution": "12:00:00",
+                    "sign_of_a_pleasant_habit": False,
+                    "reward": "test вознаграждение",
+                    "published": "Не опубликован",
+                    "related_habit": None,
+                    "owner": 6,
+                }
+            ],
         }
 
         self.assertEqual(
