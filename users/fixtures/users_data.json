@@ -4,11 +4,11 @@
     "pk": 1,
     "fields": {
       "password": "pbkdf2_sha256$870000$EtkV8XHUOGZR2fqdp1nfcJ$MXZatFC1gexJLxrZtJIvrkM39VGYDlgStNMSWuvGo9A=",
-      "last_login": "2024-09-28T13:54:28.548Z",
+      "last_login": "2024-09-29T19:18:48Z",
       "is_superuser": true,
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2024-09-28T13:53:07.169Z",
+      "date_joined": "2024-09-28T13:53:07Z",
       "email": "admin@test.ru",
       "first_name": null,
       "last_name": null,
@@ -26,11 +26,11 @@
       "is_superuser": false,
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2024-09-29T11:22:09.243Z",
+      "date_joined": "2024-09-29T11:22:09Z",
       "email": "test@test.ru",
       "first_name": null,
       "last_name": null,
-      "tg_chat_id": null,
+      "tg_chat_id": 300032857,
       "groups": [],
       "user_permissions": []
     }
@@ -46,6 +46,24 @@
       "is_active": true,
       "date_joined": "2024-09-29T11:22:09.526Z",
       "email": "test1@test.ru",
+      "first_name": null,
+      "last_name": null,
+      "tg_chat_id": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$YpydwWQdPzrg0oKVnbNkY4$T0OwKwOMIo12HyWOxDu1wKXYE+nf6y18WhCy4oU6zvY=",
+      "last_login": null,
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-30T10:25:01.098Z",
+      "email": "test2@test.ru",
       "first_name": null,
       "last_name": null,
       "tg_chat_id": null,
