@@ -59,14 +59,3 @@ def execution_time_validator(value):
             raise ValidationError(
                 "Продолжительность выполнения привычки не может быть более 120 секунд"
             )
-
-
-def frequency_of_habit_validator(value):
-    """
-    Валидатор для проверки периодичности выполнения привычки
-    """
-
-    if value > 7:
-        raise ValidationError(
-            "Периодичность выполнения привычки должна быть не реже 7 дней"
-        )
