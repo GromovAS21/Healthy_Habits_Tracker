@@ -15,10 +15,6 @@ class HabitSerializer(serializers.ModelSerializer):
         validators=[execution_time_validator],
         required=False
     )
-    periodicity = serializers.IntegerField(
-        validators=[frequency_of_habit_validator],
-        required=False
-    )
 
     class Meta:
         model = Habit

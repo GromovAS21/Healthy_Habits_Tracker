@@ -1,5 +1,6 @@
 from datetime import timedelta
 
+from django.core.validators import MaxValueValidator
 from django.db import models
 
 from users.models import User
@@ -25,6 +26,7 @@ class Habit(models.Model):
         **NULLABLE
     )
     periodicity = models.PositiveSmallIntegerField(
+        validators=[MaxValueValidator(7)],
         verbose_name="Периодичность привычки",
         default=1
     )
