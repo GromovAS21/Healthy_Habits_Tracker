@@ -29,3 +29,5 @@
 
 * [users_data.json](users%2Ffixtures%2Fusers_data.json) - пользователи
 * [habits_data.json](habits%2Ffixtures%2Fhabits_data.json) - привычки
+
+Для запуска приложения введите команду `docker-compose up -d --build`
